@@ -342,15 +342,6 @@ See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👨‍💻 Author
-
-### Shivam Singh
-
-Embedded Systems Engineer • Robotics Developer • IoT Enthusiast
-
-GitHub:
-
-https://github.com/ShivamMathtech
 
 ---
 
