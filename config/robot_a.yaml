@@ -1,0 +1,105 @@
+name: "Reference 6-DOF Arm"
+dof: 6
+base_frame: "base_link"
+tool_frame: "tool_link"
+home_position: [90.0, 90.0, 90.0, 90.0, 90.0, 90.0]
+units: "degrees"
+
+joints:
+  - name: "Base Rotation"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 1
+    pin: 2
+
+  - name: "Shoulder"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 2
+    pin: 3
+
+  - name: "Elbow"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 3
+    pin: 4
+
+  - name: "Wrist Pitch"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 4
+    pin: 5
+
+  - name: "Wrist Roll"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 5
+    pin: 6
+
+  - name: "Tool Rotation"
+    min_angle: 0
+    max_angle: 180
+    min_velocity: 0
+    max_velocity: 90
+    min_acceleration: 0
+    max_acceleration: 180
+    offset: 0
+    direction: 1
+    servo_id: 6
+    pin: 7
+
+dh_params:
+  - a: 0.0
+    alpha: 1.5707963267948966
+    d: 0.10
+    theta_offset: 0.0
+  - a: 0.15
+    alpha: 0.0
+    d: 0.0
+    theta_offset: 0.0
+  - a: 0.15
+    alpha: 0.0
+    d: 0.0
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 1.5707963267948966
+    d: 0.10
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: -1.5707963267948966
+    d: 0.08
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 0.0
+    d: 0.04
+    theta_offset: 0.0
