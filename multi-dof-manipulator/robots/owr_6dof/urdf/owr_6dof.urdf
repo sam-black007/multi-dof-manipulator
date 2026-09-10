@@ -1,0 +1,267 @@
+<?xml version="1.0" ?>
+<robot name="owr_6dof" xmlns="http://www.ros.org/wiki/URDF" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--
+  6-DOF robotic arm URDF description.
+  Generated for multi-dof-manipulator Python framework.
+  All physical parameters extracted from source model.
+  -->
+
+  <!-- =====================
+       Base Joint (BJ)
+       Base Rotation - revolute about Z -->
+  <link name="base_link">
+    <inertial>
+      <mass value="2.00431395827099" />
+      <inertia ixx="0.00559780558915754" ixy="2.08121312953797E-19" ixz="-2.03088203267664E-36"
+               iyy="0.00632266595300574" iyz="3.02972434618886E-20" izz="0.00559780558915754" />
+      <origin xyz="3.26945350830445E-18 0.0475560449135545 1.03923298601914E-18" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/base_link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="BJ" type="revolute">
+    <origin xyz="0 0 0.1181" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="BS_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0944" upper="2.0944" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="BS_Link">
+    <inertial>
+      <mass value="1.97583366234436" />
+      <inertia ixx="0.00633633680688803" ixy="5.53297653948722E-09" ixz="1.10027473238432E-08"
+               iyy="0.00431174755033153" iyz="-0.00121307806869219" izz="0.00588373141716525" />
+      <origin xyz="-2.23815285813307E-07 0.0379790003524418 0.0624393623259869" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/BS_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/BS_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="SJ" type="revolute">
+    <origin xyz="0 0.1157 0.0775" rpy="0 0 0" />
+    <parent link="BS_Link" />
+    <child link="SE_Link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="SE_Link">
+    <inertial>
+      <mass value="6.92438507119168" />
+      <inertia ixx="0.13565458366121" ixy="1.62637671478552E-19" ixz="-3.10060648119612E-18"
+               iyy="0.141881889957825" iyz="1.26283834369711E-17" izz="0.01733034956749" />
+      <origin xyz="2.50150839169102E-18 0.0491871756151301 0.177875" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/SE_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/SE_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="EJ" type="revolute">
+    <origin xyz="0 0 0.35575" rpy="0 0 0" />
+    <parent link="SE_Link" />
+    <child link="EW1_Link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.9270" upper="1.0472" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="EW1_Link">
+    <inertial>
+      <mass value="1.64092408380158" />
+      <inertia ixx="0.00433302226551719" ixy="0.000795034760133281" ixz="2.13272246028262E-07"
+               iyy="0.00315022911015594" iyz="2.61373190609785E-06" izz="0.004670087340654" />
+      <origin xyz="0.00964296883173089 -0.069409712721787 6.49394750775745E-05" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/EW1_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/EW1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="W1J" type="revolute">
+    <origin xyz="0.0695 -0.1157 0" rpy="0 0 0" />
+    <parent link="EW1_Link" />
+    <child link="W1W2_Link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="W1W2_Link">
+    <inertial>
+      <mass value="2.38378471545783" />
+      <inertia ixx="0.00656420598358183" ixy="0.00554676162331256" ixz="-1.42658921336938E-08"
+               iyy="0.0257284659921832" iyz="5.99320555321235E-08" izz="0.0282762053128848" />
+      <origin xyz="0.122416824512388 -0.070835232118926 -6.35496342438202E-07" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W12_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W12_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="W2J" type="revolute">
+    <origin xyz="0.28625 0 0" rpy="0 0 0" />
+    <parent link="W1W2_Link" />
+    <child link="W2W3_Link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.0472" upper="2.618" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="W2W3_Link">
+    <inertial>
+      <mass value="2.16776601749277" />
+      <inertia ixx="0.00982478610028387" ixy="-6.74414524982295E-05" ixz="-0.000653082358596031"
+               iyy="0.00957809977704417" iyz="-0.000917655229213172" izz="0.00385756520688612" />
+      <origin xyz="0.00448693932692878 -0.00693126827424433 0.0578431512744524" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W23_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W23_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="W3J" type="revolute">
+    <origin xyz="0.0635 0 0.12" rpy="0 0 0" />
+    <parent link="W2W3_Link" />
+    <child link="W3EEF_Link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.1416" upper="3.1416" effort="200" velocity="5" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="W3EEF_Link">
+    <inertial>
+      <mass value="0.542548240711207" />
+      <inertia ixx="0.00073681574143187" ixy="8.23684417617962E-22" ixz="1.40415282317197E-07"
+               iyy="0.000548089226198482" iyz="3.0678420032912E-20" izz="0.000548195288104005" />
+      <origin xyz="0.0313921684941835 5.73430521827697E-08 -7.81709305108791E-06" rpy="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W3Eff_Link.STL" />
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/collision/W3Eff_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Fixed joint to EEF -->
+  <joint name="eef_fixed_joint" type="fixed">
+    <parent link="W3EEF_Link" />
+    <child link="EEF_Link" />
+    <origin xyz="0.0675 0 0" rpy="0 0 0" />
+  </joint>
+
+  <link name="EEF_Link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- World joint (fixed to world, child=base_link) -->
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.75" rpy="0 0 0" />
+  </joint>
+
+</robot>

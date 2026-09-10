@@ -1,0 +1,107 @@
+# sam-black007 6-DOF Robot Configuration
+
+name: "owr_6dof"
+dof: 6
+base_frame: "base_link"
+tool_frame: "EEF_Link"
+home_position: [0, 0, 0, 0, 0, 0]  # Neutral pose (radians)
+units: "radians"
+
+joints:
+  - name: "BJ"
+    min_angle: -2.0944  # -120° in radians
+    max_angle: 2.0944   # 120° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873  # 5°/s in rad/s
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+  - name: "SJ"
+    min_angle: -1.5708  # -90° in radians
+    max_angle: 1.5708   # 90° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+  - name: "EJ"
+    min_angle: -3.9270  # -225° in radians
+    max_angle: 1.0472   # 60° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+  - name: "W1J"
+    min_angle: -1.5708  # -90° in radians
+    max_angle: 1.5708   # 90° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+  - name: "W2J"
+    min_angle: -1.0472  # -60° in radians
+    max_angle: 2.6180   # 150° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+  - name: "W3J"
+    min_angle: -3.1416  # -180° in radians
+    max_angle: 3.1416   # 180° in radians
+    min_velocity: 0.0
+    max_velocity: 0.0873
+    min_acceleration: 0.0
+    max_acceleration: 0.0
+    offset: 0.0
+    direction: 1.0
+    servo_id: None
+    pin: None
+
+dh_params:
+  - a: 0.0
+    alpha: 1.5708
+    d: 0.10
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 0.0
+    d: 0.0
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 0.0
+    d: 0.0
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 1.5708
+    d: 0.10
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: -1.5708
+    d: 0.08
+    theta_offset: 0.0
+  - a: 0.0
+    alpha: 0.0
+    d: 0.04
+    theta_offset: 0.0
+
+# Note: URDF joint transforms are NOT automatically DH parameters.
+# The joint origins and axes cannot be unambiguously converted to DH parameters.
+# The URDF transforms are preserved and the Python kinematics framework handles
+# the kinematics chain.
