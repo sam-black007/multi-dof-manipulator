@@ -1,1 +1,0 @@
-# URDF robot description for Reference 6-DOF Arm

@@ -1,5 +1,0 @@
-# MkDocs documentation
-mkdocs>=1.4.0
-mkdocs-material>=9.0.0
-mkdocstrings>=0.22.0
-mkdocstrings-python>=0.22.0
